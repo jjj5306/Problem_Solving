@@ -1,4 +1,4 @@
-/** 최단거리 11404 플로이드 **/
+/** 최단거리 11780 플로이드2 **/
 #include <iostream>
 #include <vector>
 #include <algorithm>
