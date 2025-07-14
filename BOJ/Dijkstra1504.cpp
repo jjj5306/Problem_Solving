@@ -8,10 +8,10 @@ using namespace std;
 
 int n, e, s, v;
 vector<pair<int, int>> adj[805];
-const int INF = 0x1f1f1f1f;
+const int INF = 0x3f3f3f3f;
 int dist[805];
 
-int dijkstra(int st, int en)
+long long dijkstra(int st, int en)
 {
     // st~en 까지 가야함.
     fill(dist, dist + n + 1, INF);
@@ -40,10 +40,7 @@ int dijkstra(int st, int en)
         }
     }
 
-    if (dist[en] == INF)
-        return -1;
-    else
-        return dist[en];
+    return dist[en];
 }
 
 int main()
@@ -63,10 +60,10 @@ int main()
 
     cin >> s >> v;
 
-    int ans1 = dijkstra(1, s) + dijkstra(s, v) + dijkstra(v, n);
-    int ans2 = dijkstra(1, v) + dijkstra(v, s) + dijkstra(s, n);
+    long long ans1 = dijkstra(1, s) + dijkstra(s, v) + dijkstra(v, n);
+    long long ans2 = dijkstra(1, v) + dijkstra(v, s) + dijkstra(s, n);
 
-    int ans = min(ans1, ans2);
+    long long ans = min(ans1, ans2);
     if (ans >= INF)
         cout << -1;
     else
