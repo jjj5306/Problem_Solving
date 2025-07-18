@@ -9,7 +9,7 @@ using namespace std;
 int n, m, k;
 vector<pair<long long, int>> adj[100005];
 long long dist[100005];
-const int INF = 0x7f7f7f7f;
+const long long INF = 0x7f7f7f7f7f7f;
 
 int main()
 {
@@ -63,8 +63,8 @@ int main()
         }
     }
 
-    int ans = 0, ans_idx = 0;
-    for (int i = 1; i <= n; i++)
+    long long ans = dist[1], ans_idx = 1;
+    for (int i = 2; i <= n; i++)
     {
         if (dist[i] > ans)
         {
